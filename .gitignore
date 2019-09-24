@@ -1,0 +1,19 @@
+# Certificates
+certs/
+
+# Logs
+logs/
+*.log
+*.gz
+
+# Dependency directory
+node_modules/
+
+# Config files
+config/
+
+# Images
+public/images/
+
+# Uploads
+public/uploads/
