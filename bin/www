@@ -9,22 +9,35 @@ var debug = require('debug')('powerweb:server');
 var http = require('http');
 
 /**
+ * Need the HTTPS & file system modules
+ */
+const https = require('https');
+const fs = require('fs');
+
+/**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3333');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ *  Setup the HTTPS options, reading the certificate files
  */
+// Pick up certs
+var httpOptions = {
+  key: fs.readFileSync('certs/privatekey.pem'),
+  cert: fs.readFileSync('certs/certificate.pem')
+};
 
-var server = http.createServer(app);
+/**
+ * Create HTTP server - Now needs to be HTTPS
+ */
+var server = https.createServer(httpOptions, app);
+// var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -32,7 +45,6 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -58,9 +70,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -83,8 +93,6 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
