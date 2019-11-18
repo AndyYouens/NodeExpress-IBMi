@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  h1=title
+  br
+  br
+
+  table
+    thead
+      tr
+        th Employee ID
+        th Surname
+        th First Name
+        th Department
+    tfoot
+      tr
+        th Employee ID
+        th Surname
+        th First Name
+        th Department
+    tbody
+      each row in output
+        tr
+          td=row.EMID
+          td=row.EMSUR
+          td=row.EMFIR
+          td=row.EMDEP
+
+
