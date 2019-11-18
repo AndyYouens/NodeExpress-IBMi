@@ -14,3 +14,6 @@ public/images/
 
 # Uploads
 public/uploads/
+
+# Package Locks
+package-lock.json
