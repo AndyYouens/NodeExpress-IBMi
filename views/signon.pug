@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  .container-fluid
+
+    h1=title
+    br
+    br
+
+    .container-fluid
+
+      form(class="form-signon" method="POST")
+
+        .col-xs-6
+
+          label( for="inputUser") User Profile
+          input(class="fs-width20" type="text" name="username" id="inputUser" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
+
+          br
+
+          label(for="inputPassword") Password
+          input(class="fs-width20" type="password" name="password" id="inputPassword" class="form-control" placeholder="Your Password" required)
+
+          br
+          br
+          br
+
+          - var buttonClass=['fs-width20', 'btn', 'btn-lg', 'btn-primary', 'btn-block'];
+          button(class=buttonClass type="submit") Sign in
+
+

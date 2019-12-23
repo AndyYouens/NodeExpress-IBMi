@@ -1,0 +1,888 @@
+/**
+ * © FormaServe Systems Ltd 1990 - 2018
+ * www.formaserve.co.uk
+ * 
+ * Making Tax Digital
+ * VAT Module
+ * 
+ * December 2018
+ * All rights reserved
+ * 
+ * General Stylesheet
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', serif;
+}
+
+p {
+  text-align: left;
+  font-family: 'Open Sans', serif;
+  font-size: 20px;
+}
+p14 {
+  text-align: left;
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  margin: 100px;
+  margin-top: -100px;
+}
+
+div.wrapper {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  outline: white solid 1px;
+  border: 1px gray solid;
+  text-align: center;
+  vertical-align: top;
+}
+
+div.header {
+  background: white url('../graphics/Slice 2.png') repeat-x scroll left top;
+  height: 83px;
+  width: 100%;
+  text-align: right;
+}
+
+div.header_logo {
+  width: 196px;
+  height: 56px;
+  background: url(../graphics/header_logo.jpg);
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+div.header_bg {
+  width: 100%;
+  height: 56px;
+  background: url(../graphics/header_bg.jpg) repeat-x;
+  margin: 0;
+  padding: 0;
+}
+
+div.header h1 {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 83px;
+}
+
+h1 {
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+div.header ul {
+  margin-top: -22px;
+  margin-right: 10px;
+  float: right;
+  color: #8e8e8c;
+}
+
+div.header li {
+  display: inline;
+  list-style-type: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: 'Poiret One', cursive;
+}
+
+div.header li a:hover,
+div.header li a:link,
+div.header li a:visited {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  color: #676766;
+  text-decoration: none;
+}
+
+div.headerb {
+  background: transparent url('../graphics/Slice 1.png') no-repeat scroll left top;
+  float: left;
+  height: 83px;
+  width: 265px;
+}
+
+div.content {
+  text-align: center;
+}
+
+div.search {
+  font-size: 0.8em;
+  width: 90%;
+  text-align: left;
+  border: 1px solid white;
+  margin: auto;
+}
+
+div.results {
+  margin: auto;
+  text-align: center;
+  font: ariel;
+  width: 95%;
+  border: 1px solid #cccccc;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  height: 300px;
+  line-height: 1.1em;
+}
+
+#search2 {
+  margin: auto;
+  text-align: center;
+}
+
+table.resultset {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #d2e6f5;
+  text-align: left;
+}
+
+tr.alt td {
+  background-color: #ffffff;
+}
+
+tr.over td {
+  background-color: #ffffff;
+}
+
+input {
+  width: 300px;
+  font-size: 1em;
+}
+
+input[readonly] {
+  background-color: #e4e4e4;
+  color: #000000;
+  border: solid 1px #cccccc;
+}
+
+input.button {
+  width: 100px;
+  height: 28px;
+}
+
+input.date {
+  width: 100px;
+}
+
+input.time {
+  width: 50px;
+}
+
+input.datetime {
+  width: 120px;
+}
+
+input.long {
+  width: 100%;
+}
+
+input.short {
+  width: 10%;
+}
+
+input.width10 {
+  width: 10% !important;
+}
+
+.fs-width10 {
+  width: 10% !important;
+}
+
+.fs-width20 {
+  width: 20% !important;
+}
+.fs-width30 {
+  width: 30% !important;
+}
+.fs-width40 {
+  width: 40% !important;
+}
+.fs-width50 {
+  width: 50% !important;
+}
+.fs-width60 {
+  width: 60% !important;
+}
+.fs-width70 {
+  width: 70% !important;
+}
+.fs-width80 {
+  width: 80% !important;
+}
+.fs-width90 {
+  width: 90% !important;
+}
+.fs-width100 {
+  width: 100% !important;
+}
+
+a img {
+  border: none;
+}
+
+textarea {
+  width: 97%;
+  height: 150px;
+}
+
+textarea.log {
+  width: 80%;
+  height: 300px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+#filedrag {
+  display: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 0;
+  margin: 1em 0;
+  color: #555;
+  border: 2px dashed #555;
+  border-radius: 7px;
+  cursor: default;
+}
+
+#filedrag.hover {
+  color: #0000ff;
+  border-color: #0000ff;
+  border-style: solid;
+  box-shadow: inset 0 3px 4px #888;
+}
+
+div.tab-4 li a:hover,
+div.tab-4 li a:link,
+div.tab-4 li a:visited {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  color: green;
+  text-decoration: none;
+}
+
+#alertWindow {
+  display: none;
+  text-align: center;
+  border: 1px solid #333;
+  width: 200px;
+  height: 80px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#btnOk,
+#btnCancel {
+  width: 70px;
+}
+
+label.error {
+  float: none;
+  color: red;
+  padding-left: .5em;
+  vertical-align: top;
+  width: 150px;
+}
+
+/*.ui-tooltip {
+    font-size: 10pt;
+    font-family: Calibri;
+    color: #0099ff;
+    box-shadow: 0 0 7px black;
+    border-radius: 15px;
+}*/
+
+div.footer {
+  height: 35px;
+  width: 100%;
+  text-align: right;
+  color: steelblue;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+div.ui-datepicker {
+  font-size: 10px;
+}
+
+div.ui-autocomplete {
+  font-size: 10px;
+}
+
+div.ui-dialog {
+  font-size: 10px;
+}
+
+select,
+input {
+  font-size: 1em;
+}
+
+.paginationControl {
+  padding: 10px;
+  color: #333333;
+  height: 13px;
+}
+
+.paginationControl_showing {
+  float: left;
+  position: relative;
+}
+
+.paginationControl_showing strong.current {
+  color: #a8050d;
+}
+
+.paginationControl_pages {
+  float: right;
+  position: relative;
+  color: #494848;
+}
+
+.paginationControl_pages a {
+  color: #494848;
+}
+
+.paginationControl_pages strong {
+  color: #a8050d;
+}
+
+.paginationControl_pages .previous,
+.paginationControl_pages .next {
+  color: #a8050d;
+}
+
+.disabled {
+  color: #cdcccc;
+}
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px;
+}
+
+.ui-timepicker-div dl {
+  text-align: left;
+}
+
+.ui-timepicker-div dl dt {
+  float: left;
+  clear: left;
+  padding: 0 0 0 5px;
+}
+
+.ui-timepicker-div dl dd {
+  margin: 0 10px 10px 45%;
+}
+
+.ui-timepicker-div td {
+  font-size: 90%;
+}
+
+.ui-tpicker-grid-label {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ui-timepicker-rtl {
+  direction: rtl;
+}
+
+.ui-timepicker-rtl dl {
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+.ui-timepicker-rtl dl dt {
+  float: right;
+  clear: right;
+}
+
+.ui-timepicker-rtl dl dd {
+  margin: 0 45% 10px 10px;
+}
+
+.ui-menu .ui-menu-item a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  zoom: 1;
+  float: left;
+  clear: left;
+  width: 330px;
+}
+.ui-menu .ui-menu-item a:hover {
+  display: block;
+  padding: 3px 3px 3px 3px;
+  text-decoration: none;
+  color: Blue;
+  cursor: pointer;
+  background-color: ButtonText;
+}
+
+.ui-menu {
+  position: absolute;
+  width: 100px;
+}
+
+.ui-menu .ui-menu-item a:hover {
+  display: block;
+  padding: 0;
+  text-decoration: none;
+  color: Blue;
+  cursor: pointer;
+  background-color: ButtonText;
+}
+.ui-autocomplete span.hl_results {
+  background-color: #ffff66;
+}
+
+.ui-autocomplete-loading {
+  background: white url("/images/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+.ui-autocomplete li {
+  font-size: 1em;
+  font-family: 'Open Sans', serif;
+}
+
+/* highlight results */
+.ui-autocomplete span.hl_results {
+  background-color: #ffff66;
+}
+
+.ui-autocomplete {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+}
+
+.ui-autocomplete li {
+  font-size: 16px;
+}
+
+#feedback {
+  font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+  background: #feca40;
+}
+
+#selectable .ui-selected {
+  background: #f39814;
+  color: white;
+}
+
+#selectable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#selectable li {
+  width: 500px;
+  text-align: left;
+}
+
+.section {
+  float: left;
+  width: 50%;
+}
+
+.utility {
+  display: block;
+}
+
+#container {
+  width: 480px;
+}
+
+#leftcolumn {
+  width: 220px;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  background: #bbe3a8;
+  font-size: 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#rightcolumn {
+  width: 220px;
+  float: right;
+  margin: 5px;
+  padding: 5px;
+  background: #bbe3a8;
+  font-size: 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#leftbottomcolumn {
+  width: 220px;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  background: #bbe3a8;
+  font-size: 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#rightbottomcolumn {
+  width: 220px;
+  float: right;
+  margin: 5px;
+  padding: 5px;
+  background: #bbe3a8;
+  font-size: 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+.box {
+  display: block;
+  width: 220px;
+  float: right;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  border-radius: 5px;
+  border-style: solid;
+  background: #bbe3a8;
+}
+
+#selectable .ui-selecting {
+  background: #feca40;
+}
+
+#selectable .ui-selected {
+  background: lightslategrey;
+  color: white;
+}
+
+#selectable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+.fs-text-red,
+.fs-hover-text-red:hover {
+  color: #f44336 !important;
+}
+
+.fs-text-green,
+.fs-hover-text-green:hover {
+  color: #4caf50 !important;
+}
+
+.fs-text-blue,
+.fs-hover-text-blue:hover {
+  color: #2196f3 !important;
+}
+
+.fs-text-yellow,
+.fs-hover-text-yellow:hover {
+  color: #ffeb3b !important;
+}
+
+.fs-text-white,
+.fs-hover-text-white:hover {
+  color: #fff !important;
+}
+
+.fs-text-black,
+.fs-hover-text-black:hover {
+  color: #000 !important;
+}
+.fs-text-grey,
+.fs-hover-text-grey:hover,
+.fs-text-gray,
+.fs-hover-text-gray:hover {
+  color: #757575 !important;
+}
+
+.fs-text-amber {
+  color: #ffc107 !important;
+}
+
+.fs-text-aqua {
+  color: #00ffff !important;
+}
+
+.fs-text-light-blue {
+  color: #87ceeb !important;
+}
+
+.fs-text-brown {
+  color: #795548 !important;
+}
+
+.fs-text-cyan {
+  color: #00bcd4 !important;
+}
+
+.fs-text-blue-grey,
+.fs-text-blue-gray {
+  color: #607d8b !important;
+}
+
+.fs-text-light-green {
+  color: #8bc34a !important;
+}
+
+.fs-text-indigo {
+  color: #3f51b5 !important;
+}
+
+.fs-text-khaki {
+  color: #b4aa50 !important;
+}
+
+.fs-text-lime {
+  color: #cddc39 !important;
+}
+
+.fs-text-orange {
+  color: #ff9800 !important;
+}
+
+.fs-text-deep-orange {
+  color: #ff5722 !important;
+}
+
+.fs-text-pink {
+  color: #e91e63 !important;
+}
+
+.fs-text-purple {
+  color: #9c27b0 !important;
+}
+
+.fs-text-deep-purple {
+  color: #673ab7 !important;
+}
+
+.fs-text-sand {
+  color: #fdf5e6 !important;
+}
+
+.fs-text-teal {
+  color: #009688 !important;
+}
+
+.fs-text-blue2 {
+  color: #2e6e9e !important;
+}
+
+.fs-text-left {
+  text-align: left !important;
+}
+
+.fs-text-right {
+  text-align: right !important;
+}
+
+.fs-text-centre {
+  text-align: center !important;
+}
+
+.fs-text-justify {
+  text-align: justify !important;
+}
+
+/*  Navigation Customisation*/
+.navbar-default {
+  background-color: #b99573;
+  border-color: #060837;
+}
+.navbar-default .navbar-brand {
+  color: #187dd4;
+  /* color: darkolivegreen; */
+  font-size: 24px;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #060837;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  font-size: 16px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #060837;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #060837;
+  background-color: #060837;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #060837;
+  background-color: #060837;
+}
+.navbar-default .navbar-toggle {
+  border-color: #060837;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #060837;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+  background-color: #b99573;
+}
+SSS
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #060837;
+}
+
+.top {
+  margin-top: 2em;
+}
+
+.bottom {
+  margin-bottom: 2em;
+}
+
+.fs-font-bold {
+  font-weight: bold;
+}
+
+.ui-tooltip {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+  font: bold 14px "Helvetica Neue", Sans-Serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 7px black;
+}
+.arrow {
+  width: 70px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  bottom: -16px;
+}
+.arrow.top {
+  top: -16px;
+  bottom: auto;
+}
+.arrow.left {
+  left: 20%;
+}
+.arrow:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: -20px;
+  width: 25px;
+  height: 25px;
+  box-shadow: 6px 5px 9px -9px black;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.arrow.top:after {
+  bottom: -20px;
+  top: auto;
+}
+
+.fs-top0 {
+  margin-top: 0px;
+}
+
+.fs-centre {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.fs-alignbox {
+  padding-right: 0px;
+  height: 34px;
+  width: 348px;
+}
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dotted #666;
+  text-align: left;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.thick {
+  font-weight: bold;
+}
+
+.thicker {
+  font-weight: 900;
+}
