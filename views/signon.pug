@@ -10,17 +10,17 @@ block content
 
     .container-fluid
 
-      form(class="form-signon" method="POST")
+      form(class="form-signon" method="POST" action="/signon")
 
         .col-xs-6
 
           label( for="inputUser") User Profile
-          input(class="fs-width20" type="text" name="username" id="inputUser" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
+          input(class="fs-width20" type="text" name="userID" id="UserID" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
 
           br
 
           label(for="inputPassword") Password
-          input(class="fs-width20" type="password" name="password" id="inputPassword" class="form-control" placeholder="Your Password" required)
+          input(class="fs-width20" type="password" name="password" id="password" class="form-control" placeholder="Your Password" required)
 
           br
           br
