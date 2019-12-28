@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const session = require('client-sessions');
 
 /* GET signon page. */
 router.get('/', function(req, res, next) {
@@ -34,56 +35,42 @@ router.post('/', function(req, res, next) {
     console.error('Connection Failed!');
     throw new Error('Connection Failed!');
   } else {
-    console.log('Connection complete');
-  }
-  // throw new Error('Die User:' + userID);
+    // console.log('Connection complete');
 
-  // call IBM API
-  var pgm = new xt.iPgm('QSYGETPH', { lib: 'QSYS', error: 'on' });
-  pgm.addParam(padding_right(userID.toUpperCase(), ' ', 10), '10A');
-  pgm.addParam(padding_right(password, ' ', 50), '50A');
-  pgm.addParam(' ', '12A', { io: 'out', hex: 'on' });
-  pgm.addParam([[0, '10i0'], [0, '10i0'], [' ', '7A'], [' ', '1A'], [' ', '256A']]);
-  pgm.addParam(50, '10i0');
-  pgm.addParam(-1, '10i0');
+    // call IBM API
+    var pgm = new xt.iPgm('QSYGETPH', { lib: 'QSYS', error: 'on' });
+    // pgm.addParam(padding_right(userID.toUpperCase(), ' ', 10), '10A');
+    pgm.addParam(userID.toUpperCase(), '10A');
+    pgm.addParam(password, '50A');
+    // pgm.addParam(padding_right(password, ' ', 50), '50A');
+    pgm.addParam(' ', '12A', { io: 'out', hex: 'on' });
+    pgm.addParam([[0, '10i0'], [0, '10i0'], [' ', '7A'], [' ', '1A'], [' ', '256A']]);
+    pgm.addParam(50, '10i0');
+    pgm.addParam(-1, '10i0');
 
-  conn.add(pgm.toXML());
+    conn.add(pgm.toXML());
 
-  conn.run(function(rsp) {
-    console.log('Running API');
-    let results = xt.xmlToJson(rsp);
-    console.log(`Results: ${JSON.stringify(results, null, 4)}`);
+    conn.run(function(rsp) {
+      let results = xt.xmlToJson(rsp);
+      // console.log(`Results: ${JSON.stringify(results, null, 4)}`);
 
-    // results sent back as array, pickup first element
-    let resultarray = results[0];
-    // console.log(`Result array: ${JSON.stringify(resultarray, null, 4)}`);
-    // console.log(`Success?: ${resultarray.success}`);
+      // results sent back as array, pickup first element
+      let resultarray = results[0];
 
-    // let rc = results.success;
+      if (resultarray.success) {
+        console.log(`${userID} Has Logged In`);
+        // store details in session
+        req.fssession.userID = userID;
+      } else {
+        console.error(`Login Failed for ${userID}`);
+        title = 'Log On Failed!';
+        req.fssession.reset(); // get rid of session stuff
+      }
 
-    if (resultarray.success) {
-      console.log('Login Success');
-    } else {
-      console.error('Login Failed');
-      title = 'Log On Failed!';
-    }
-
-    // Render signon
-    res.render('signon', {
-      title
+      // Render signon
+      res.render('signon', { title });
     });
-  });
+  }
 });
-
-function padding_right(s, c, n) {
-  if (!s || !c || s.length >= n) {
-    return s;
-  }
-  var max = (n - s.length) / c.length;
-  for (var i = 0; i < max; i++) {
-    s += c;
-  }
-  return s;
-}
 
 module.exports = router;

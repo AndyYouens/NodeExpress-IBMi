@@ -3,12 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('client-sessions');
 
+// routing bits
 var indexRouter = require('./routes/index');
 var employeeRouter = require('./routes/employee');
 var signonRouter = require('./routes/signon');
 
 var app = express();
+
+// Setup session stuff
+app.use(
+  session({
+    cookieName: 'fssession',
+    secret: 'powerwiresecret',
+    duration: 4 * 60 * 60 * 1000,
+    activeDuration: 1000 * 60 * 5,
+    httpOnly: true,
+    secure: true,
+    ephemeral: true
+  })
+)
 
 // pickup FormaServe icon
 app.use('/favicon.ico', express.static('images/favicon.ico'));

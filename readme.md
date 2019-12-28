@@ -20,4 +20,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Published PowerWire
 
-*  December 2019
+*  January 2020
