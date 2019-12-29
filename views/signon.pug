@@ -10,23 +10,32 @@ block content
 
     .container-fluid
 
-      form(class="form-signon" method="POST" action="/signon")
+      //- Check if we a user signed in
+      if accessFlag
 
-        .col-xs-6
+        .row      
+          .col-xs-8.text-right
 
-          label( for="inputUser") User Profile
-          input(class="fs-width20" type="text" name="userID" id="UserID" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
+          a(class="btn btn-lg btn-info" href="/employee") 
+            i.fas.fa-users
+            |  Employees                    
 
-          br
+      else
 
-          label(for="inputPassword") Password
-          input(class="fs-width20" type="password" name="password" id="password" class="form-control" placeholder="Your Password" required)
+        form(class="form-signon" method="POST" action="/signon")
 
-          br
-          br
-          br
+          .col-xs-6
 
-          - var buttonClass=['fs-width20', 'btn', 'btn-lg', 'btn-primary', 'btn-block'];
-          button(class=buttonClass type="submit") Sign in
+            label( for="inputUser") User Profile
+            input(class="fs-width20" type="text" name="userID" id="UserID" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
 
+            br
 
+            label(for="inputPassword") Password
+            input(class="fs-width20" type="password" name="password" id="password" class="form-control" placeholder="Your Password" required)
+
+            br
+            br
+
+            - var buttonClass=['fs-width20', 'btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass type="submit") Sign in
