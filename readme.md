@@ -16,7 +16,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Latest Changes
 
-* Andy Youens - December 2019
+* Andy Youens - December 2019 - Add signon functionality
 
 ## Published PowerWire
 

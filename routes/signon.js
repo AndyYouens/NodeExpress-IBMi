@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const session = require('client-sessions');
-const { Connection, Statement } = require('idb-pconnector');
+const xt = require('itoolkit');
 
 /* GET signon page. */
 router.get('/', function(req, res, next) {
   let title = 'PowerWire Intranet Signon';
-  let accessFlag = false;
+  let accessFlag = false;  // Force signon inputs
 
   // Render Signon Screen
   res.render('signon', {
@@ -27,7 +27,6 @@ router.post('/', function(req, res, next) {
 
   console.log(`Varyifying User: ${req.body.userID}`);
 
-  var xt = require('itoolkit');
   var conn = new xt.iConn('*LOCAL');
 
   if (!conn) {
