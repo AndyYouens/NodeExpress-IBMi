@@ -1,16 +1,19 @@
 {
   "name": "powerweb",
-  "version": "0.0.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "client-sessions": "^0.8.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "idb-pconnector": "^1.0.8",
+    "itoolkit": "^0.1.6",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "^2.0.4"
   }
 }

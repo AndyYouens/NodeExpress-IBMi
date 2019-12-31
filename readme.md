@@ -14,3 +14,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Andy Youens - FormaServe Systems Ltd
 
+## Latest Changes
+
+* Andy Youens - December 2019 - Add signon functionality
+
+## Published PowerWire
+
+*  January 2020

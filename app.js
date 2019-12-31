@@ -3,11 +3,30 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('client-sessions');
 
+// routing bits
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var employeeRouter = require('./routes/employee');
+var signonRouter = require('./routes/signon');
 
 var app = express();
+
+// Setup session stuff
+app.use(
+  session({
+    cookieName: 'fssession',
+    secret: 'powerwiresecret',
+    duration: 4 * 60 * 60 * 1000,
+    activeDuration: 1000 * 60 * 5,
+    httpOnly: true,
+    secure: true,
+    ephemeral: true
+  })
+)
+
+// pickup FormaServe icon
+app.use('/favicon.ico', express.static('images/favicon.ico'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +39,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/employee', employeeRouter);
+app.use('/signon', signonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

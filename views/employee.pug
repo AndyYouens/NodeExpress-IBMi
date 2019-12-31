@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  .container-fluid
+
+    h1=title
+    br
+    br
+
+    .container-fluid
+      table(class='table table-striped table-hover table-condensed')
+        thead
+          tr
+            th Employee ID
+            th Surname
+            th First Name
+            th Department
+        tfoot
+          tr
+            th Employee ID
+            th Surname
+            th First Name
+            th Department
+        tbody
+          each row in output
+            tr
+              td=row.EMID
+              td=row.EMSUR
+              td=row.EMFIR
+              td=row.EMDEP
+

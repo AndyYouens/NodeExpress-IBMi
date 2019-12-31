@@ -1,0 +1,41 @@
+extends layout
+
+block content
+
+  .container-fluid
+
+    h1=title
+    br
+    br
+
+    .container-fluid
+
+      //- Check if we a user signed in
+      if accessFlag
+
+        .row      
+          .col-xs-8.text-right
+
+          a(class="btn btn-lg btn-info" href="/employee") 
+            i.fas.fa-users
+            |  Employees                    
+
+      else
+
+        form(class="form-signon" method="POST" action="/signon")
+
+          .col-xs-6
+
+            label( for="inputUser") User Profile
+            input(class="fs-width20" type="text" name="userID" id="UserID" class="form-control" placeholder="Your IBM i User" min="2" maxlength="10" required)
+
+            br
+
+            label(for="inputPassword") Password
+            input(class="fs-width20" type="password" name="password" id="password" class="form-control" placeholder="Your Password" required)
+
+            br
+            br
+
+            - var buttonClass=['fs-width20', 'btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass type="submit") Sign in
