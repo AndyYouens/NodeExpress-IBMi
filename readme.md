@@ -1,6 +1,10 @@
 ## Project Title
 
-A Nodejs Express Website
+A Nodejs Express Website on IBM i
+
+## Pre-reqs
+
+Requires Nod.js on IBM at least version 8
 
 ## Authors
 
