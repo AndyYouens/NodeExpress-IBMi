@@ -1,6 +1,6 @@
 ## Project Title
 
-A Nodejs Express Website on IBM i
+A Nodejs Express Website Example on IBM i
 
 ## Pre-reqs
 
@@ -20,8 +20,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Latest Changes
 
-* Andy Youens - December 2019 - Add signon functionality
+* Andy Youens - January 2020 - Add record create functionality
 
 ## Published PowerWire
 
-*  January 2020
+*  February 2020
+
+## Copyright
+
+* Andy Youens (c) 1990 - 2020 FormaServe Systems Ltd

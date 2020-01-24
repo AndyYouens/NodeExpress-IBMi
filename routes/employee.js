@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 
   // we got a user signed in?
   if (typeof req.fssession.userID !== 'undefined' && req.fssession.userID) {
+    
     async function execEmployees() {
       let schema = 'HRDATA';
 
