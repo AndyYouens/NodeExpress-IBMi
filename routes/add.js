@@ -8,9 +8,7 @@ router.get('/', function(req, res, next) {
   let title = 'Add New Employee'
 
   // Render Signon Screen
-  res.render('add', {
-    title
-  })
+  res.render('add', { title })
 })
 
 /* POST signon page. */
