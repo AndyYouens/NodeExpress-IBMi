@@ -20,11 +20,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Latest Changes
 
-* Andy Youens - January 2020 - Add record create functionality
+* Andy Youens - February 2020 - Delete record create functionality
 
 ## Published PowerWire
 
-*  February 2020
+*  March 2020
 
 ## Copyright
 
