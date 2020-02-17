@@ -40,14 +40,14 @@ block content
               td.text-center
                 =row.EMDEP
               td.text-center
-                a(title='Delete Me' href='#delModal' data-toggle='modal' data-delemid=row.EMID data-delemsur=row.EMSUR data-delemfir=row.EMFIR   ) 
+                a(title='Delete Me' href='#delModal' data-toggle='modal' data-delemid=row.EMID data-delemsur=row.EMSUR data-delemfir=row.EMFIR data-delemdep=row.EMDEP) 
                   i.fas.fa-trash-alt
 
   //- Delete Modal
   #delModal.modal.fade.bs-example-modal-sm(tabindex='-1')
     .modal-dialog.modal-md
       .modal-content
-        // Modal Header
+        //- Modal Header
         .modal-header
           h4#delModalHeader.modal-title Delete Employee
           button.close(type='button' data-dismiss='modal' aria-label='Close')
@@ -57,13 +57,16 @@ block content
         #delModalBody.modal-body
           .form-group
             label(for='id') Employee ID
-            input#delemid.form-control(type='text' value='')
+            input#delemid.form-control(type='text' value='' class='fs-width20' readonly)
           .form-group
             label(for='firstname') First Name
-            input#delemfir.form-control(type='text' value='')
+            input#delemfir.form-control(type='text' value='' readonly)
           .form-group
             label(for='surname') Surname
-            input#delemsur.form-control(type='text' value='')
+            input#delemsur.form-control(type='text' value='' readonly)
+          .form-group
+            label(for='department') Department
+            input#delemdep.form-control(type='text' value='' class='fs-width20' readonly)
           h5.delStatusMsg
         //- Modal Footer
         .modal-footer
@@ -80,10 +83,38 @@ block content
         var delemid = button.data('delemid');
         var delemfir = button.data('delemfir');
         var delemsur = button.data('delemsur');
+        var delemdep = button.data('delemdep');
         var modal = $(this);
         modal.find('#delemid').val(delemid);
         modal.find('#delemfir').val(delemfir);
         modal.find('#delemsur').val(delemsur);
+        modal.find('#delemdep').val(delemdep);
       });
 
     });
+
+    function submitDeleteForm() {
+
+      var emid = $('#delemid').val();
+      // alert('Employee ID: ' + emid);
+
+      $.ajax({
+        type: 'POST',
+        url: 'ajax_employee',
+        data: 'action=delete&emid=' + emid,
+        beforeSend: function() {
+          $('.submitBtn').attr("disabled", "disabled");
+          $('.modal-body').css('opacity', '.6');
+        },
+        success: function(msg) {
+
+          if (msg == 'ok') {
+            $('.delStatusMsg').html('<span style="color:green;"><strong>Employee Has Been Deleted.</strong></span>');
+          } else {
+            $('.delStatusMsg').html('<span style="color:red;"><strong>Unable to delete - Please try again later.</strong></span>');
+          }
+          $('.submitBtn').removeAttr("disabled");
+          $('.modal-body').css('opacity', '');
+        }
+      });
+    }

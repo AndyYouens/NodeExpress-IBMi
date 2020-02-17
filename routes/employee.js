@@ -5,6 +5,7 @@ const { Connection, Statement } = require('idb-pconnector')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log('--> Into employee GET')
   var title = 'Employee Database'
 
   // Dev only check session cookie
