@@ -4,7 +4,7 @@ A Nodejs Express Website Example on IBM i
 
 ## Pre-reqs
 
-Requires Node.js on IBM i at least version 8
+* Requires Node.js on IBM i at least version 8
 
 ## Authors
 
@@ -16,11 +16,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Andy Youens - FormaServe Systems Ltd
+* Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
 
 ## Latest Changes
 
-* Andy Youens - February 2020 - Delete record create functionality
+* Andy Youens - February 2020 - Include Delete record functionality
 
 ## Published PowerWire
 
@@ -29,3 +29,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Copyright
 
 * Andy Youens (c) 1990 - 2020 FormaServe Systems Ltd
+
+### Open Source on IBM i - Oh Yea! ###
