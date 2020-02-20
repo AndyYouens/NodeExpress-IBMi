@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
     // get post vars
     let action = req.body.action
 
-    // Check action
+    // delete functionality
     if (action == 'delete') {
       let emid = req.body.emid
       console.log(`Deleting Employee ID: ${emid}`)
@@ -36,6 +36,36 @@ router.post('/', function(req, res, next) {
 
       execDelete(emid).catch(error => {
         console.error(`Unable to delete employee ${emid} - Error: ${error}`)
+        res.send('error')
+      })
+    }
+
+    // update functionality
+    if (action == 'update') {
+      let emid = req.body.emid
+      let emfir = req.body.emfir
+      let emsur = req.body.emsur
+      let emdep = req.body.emdep
+      let fullName = req.body.emfir.trim() + ' ' + req.body.emsur.trim()
+
+      async function execUpdate(emid) {
+        console.log(`Updating Employee ID: ${emid} ${fullName} - Dep: ${emdep}`)
+        const connection = new Connection({ url: '*LOCAL' })
+        const statement = new Statement(connection)
+
+        let sql = `update ${schema}.employee set emdep = ?, emsur = ?, emfir = ?  where emid = ?`
+
+        await statement.prepare(sql)
+
+        await statement.bindParam([[`${emdep}`, IN, CHAR], [`${emsur}`, IN, CHAR], [`${emfir}`, IN, CHAR], [`${emid}`, IN, NUMERIC]])
+
+        await statement.execute(sql)
+
+        res.send('ok')
+      }
+
+      execUpdate(emid).catch(error => {
+        console.error(`Unable to update employee ${emid} - Error: ${error}`)
         res.send('error')
       })
     }

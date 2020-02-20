@@ -20,11 +20,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Latest Changes
 
-* Andy Youens - February 2020 - Include Delete record functionality
+* Andy Youens - March 2020 - Include Update record functionality
 
-## Published PowerWire
+## Published PowerWire Article
 
-*  March 2020
+*  April 2020
 
 ## Copyright
 

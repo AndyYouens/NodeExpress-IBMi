@@ -13,6 +13,7 @@ block content
       table(class='table table-striped table-hover table-condensed')
         thead
           tr
+            th &nbsp; 
             th.text-center 
               | Employee ID
             th Surname
@@ -22,6 +23,7 @@ block content
             th &nbsp;
         tfoot
           tr
+            th &nbsp;
             th.text-center
               | Employee ID
             th Surname
@@ -34,10 +36,13 @@ block content
           each row in output
             tr
               td.text-center
+                a(title='Update Me' href='#updModal' data-toggle='modal' data-updemid=row.EMID data-updemsur=row.EMSUR data-updemfir=row.EMFIR data-updemdep=row.EMDEP) 
+                  i.fas.fa-user-edit
+              td.text-center
                 =row.EMID
               td=row.EMSUR
               td=row.EMFIR
-              td.text-center
+              td.text-center 
                 =row.EMDEP
               td.text-center
                 a(title='Delete Me' href='#delModal' data-toggle='modal' data-delemid=row.EMID data-delemsur=row.EMSUR data-delemfir=row.EMFIR data-delemdep=row.EMDEP) 
@@ -71,14 +76,44 @@ block content
         //- Modal Footer
         .modal-footer
           button.btn.btn-secondary(type='button' data-dismiss='modal' onclick='javascript:window.location.reload()') Close
-          button#submitBtn.btn.btn-primary.submitBtn(type='button' onclick='submitDeleteForm()') You Sure?
+          button#submitBtn.btn.btn-primary.submitBtn(type='button' onclick='submitDeleteForm()') Confirm Delete
+
+  //- Update Modal
+  #updModal.modal.fade.bs-example-modal-sm(tabindex='-1')
+    .modal-dialog.modal-md
+      .modal-content
+        //- Modal Header
+        .modal-header
+          h4#updModalHeader.modal-title Update Employee
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true')
+              i.fas.fa-window-close
+        //- Modal Body
+        #updModalBody.modal-body
+          .form-group
+            label(for='id') Employee ID
+            input#updemid.form-control(type='text' value='' class='fs-width20' readonly)
+          .form-group
+            label(for='firstname') First Name
+            input#updemfir.form-control(type='text' value='')
+          .form-group
+            label(for='surname') Surname
+            input#updemsur.form-control(type='text' value='')
+          .form-group
+            label(for='department') Department
+            input#updemdep.form-control(type='text' value='' class='fs-width20')
+          h5.updStatusMsg
+        //- Modal Footer
+        .modal-footer
+          button.btn.btn-secondary(type='button' data-dismiss='modal' onclick='javascript:window.location.reload()') Close
+          button#submitBtn.btn.btn-primary.submitBtn(type='button' onclick='submitUpdateForm()') Confirm Update
+
 
   script.
     $(function() {
 
       //- Delete Function
       $('#delModal').on('show.bs.modal', function(event) {
-
         var button = $(event.relatedTarget);
         var delemid = button.data('delemid');
         var delemfir = button.data('delemfir');
@@ -91,26 +126,69 @@ block content
         modal.find('#delemdep').val(delemdep);
       });
 
+      //- Update Function
+      $('#updModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var updemid = button.data('updemid');
+        var updemfir = button.data('updemfir');
+        var updemsur = button.data('updemsur');
+        var updemdep = button.data('updemdep');
+        var modal = $(this);
+        modal.find('#updemid').val(updemid);
+        modal.find('#updemfir').val(updemfir);
+        modal.find('#updemsur').val(updemsur);
+        modal.find('#updemdep').val(updemdep);
+      });
+
+
     });
 
     function submitDeleteForm() {
 
       var emid = $('#delemid').val();
 
-      $.ajax({
+      $.ajax({ 
         type: 'POST',
         url: 'ajax_employee',
         data: 'action=delete&emid=' + emid,
         beforeSend: function() {
           $('.submitBtn').attr("disabled", "disabled");
-          $('.modal-body').css('opacity', '.6');
+          $('.modal-body').css('opacity', '.5');
         },
         success: function(msg) {
 
           if (msg == 'ok') {
             $('.delStatusMsg').html('<span style="color:green;"><strong>Employee Has Been Deleted.</strong></span>');
           } else {
-            $('.delStatusMsg').html('<span style="color:red;"><strong>Unable to delete - Please try again later.</strong></span>');
+            $('.delStatusMsg').html('<span style="color:red;"><strong>Unable To Delete - Please try again later.</strong></span>');
+          }
+          $('.submitBtn').removeAttr("disabled");
+          $('.modal-body').css('opacity', '');
+        }
+      });
+    }
+
+    function submitUpdateForm() {
+
+      var emid = $('#updemid').val();
+      var emfir = $('#updemfir').val();
+      var emsur = $('#updemsur').val();
+      var emdep = $('#updemdep').val();
+
+      $.ajax({ 
+        type: 'POST',
+        url: 'ajax_employee',
+        data: 'action=update&emid=' + emid + '&emfir=' + emfir + '&emsur=' + emsur + '&emdep=' + emdep,
+        beforeSend: function() {
+          $('.submitBtn').attr("disabled", "disabled");
+          $('.modal-body').css('opacity', '.5');
+        },
+        success: function(msg) {
+
+          if (msg == 'ok') {
+            $('.updStatusMsg').html('<span style="color:green;"><strong>Employee Has Been Updated.</strong></span>');
+          } else {
+            $('.updStatusMsg').html('<span style="color:red;"><strong>Unable To Update - Please try again later.</strong></span>');
           }
           $('.submitBtn').removeAttr("disabled");
           $('.modal-body').css('opacity', '');

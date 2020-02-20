@@ -6,7 +6,7 @@ var logger = require('morgan')
 const session = require('client-sessions')
 
 // routing bits
-var indexRouter = require('./routes/index')
+var indexRouter = require('./routes/signon')
 var employeeRouter = require('./routes/employee')
 var signonRouter = require('./routes/signon')
 var addRouter = require('./routes/add')

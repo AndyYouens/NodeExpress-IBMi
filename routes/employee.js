@@ -35,8 +35,6 @@ router.get('/', function(req, res, next) {
     })
   } else {
     console.error('No User Is Signed In')
-    // let userFlag = fsUtils.signIn();
-    // console.error(`User Flag is: ${userFlag}`);
     title = 'Employee Database - Not Authorised!'
     let notAuthorised = {}
 
