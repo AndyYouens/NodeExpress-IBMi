@@ -4,11 +4,21 @@ block content
 
   .container-fluid
 
-    h1=title
     br
+    .row
+      .col-9
+        h1.fs-text-blue=title
+      .col-3
+        .text-right
+          span(data-toggle='modal' data-target="#addModal")
+            a.btn.btn-info(href='#addModal' data-toggle='tooltip' title='Add new contact')
+              i.fas.fa-user
+              |  Add Employee
+
     br
 
     .container-fluid
+
 
       table(class='table table-striped table-hover table-condensed')
         thead
@@ -109,6 +119,36 @@ block content
           button#submitBtn.btn.btn-primary.submitBtn(type='button' onclick='submitUpdateForm()') Confirm Update
 
 
+  //- Add Modal
+  #addModal.modal.fade.bs-example-modal-sm(tabindex='-1')
+    .modal-dialog.modal-md
+      .modal-content
+
+        //- Modal Header
+        .modal-header
+          h4#updModalHeader.modal-title Add Employee
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true')
+              i.fas.fa-window-close
+
+        //- Modal Body
+        #updModalBody.modal-body
+          .form-group
+            label(for='addemfir') First Name
+            input#addemfir.form-control(type='text' value='')
+          .form-group
+            label(for='addemsur') Surname
+            input#addemsur.form-control(type='text' value='')
+          .form-group
+            label(for='addemdep') Department
+            input#addemdep.form-control(type='text' value='' class='fs-width20')
+          h5.addStatusMsg
+
+        //- Modal Footer
+        .modal-footer
+          button.btn.btn-secondary(type='button' data-dismiss='modal' onclick='javascript:window.location.reload()') Close
+          button#submitBtn.btn.btn-primary.submitBtn(type='button' onclick='submitAddForm()') Confirm Add
+
   script.
     $(function() {
 
@@ -189,6 +229,33 @@ block content
             $('.updStatusMsg').html('<span style="color:green;"><strong>Employee Has Been Updated.</strong></span>');
           } else {
             $('.updStatusMsg').html('<span style="color:red;"><strong>Unable To Update - Please try again later.</strong></span>');
+          }
+          $('.submitBtn').removeAttr("disabled");
+          $('.modal-body').css('opacity', '');
+        }
+      });
+    }
+
+    function submitAddForm() {
+
+      var emfir = $('#addemfir').val();
+      var emsur = $('#addemsur').val();
+      var emdep = $('#addemdep').val();
+
+      $.ajax({ 
+        type: 'POST',
+        url: 'ajax_employee',
+        data: 'action=add&emfir=' + emfir + '&emsur=' + emsur + '&emdep=' + emdep,
+        beforeSend: function() {
+          $('.submitBtn').attr("disabled", "disabled");
+          $('.modal-body').css('opacity', '.5');
+        },
+        success: function(msg) {
+
+          if (msg == 'ok') {
+            $('.addStatusMsg').html('<span style="color:green;"><strong>Employee Has Been Added.</strong></span>');
+          } else {
+            $('.addStatusMsg').html('<span style="color:red;"><strong>Unable To Update - Please try again later.</strong></span>');
           }
           $('.submitBtn').removeAttr("disabled");
           $('.modal-body').css('opacity', '');

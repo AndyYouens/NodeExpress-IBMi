@@ -1,7 +1,6 @@
-var express = require('express')
-var router = express.Router()
-const session = require('client-sessions')
-const { Connection, Statement, IN, NUMERIC, CHAR } = require('idb-pconnector')
+const express = require('express')
+const router = express.Router()
+const { Connection, Statement, IN, CHAR } = require('idb-pconnector')
 
 /* GET signon page. */
 router.get('/', function(req, res, next) {

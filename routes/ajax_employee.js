@@ -1,11 +1,11 @@
 var express = require('express')
 var router = express.Router()
-const session = require('client-sessions')
 const { Connection, Statement, IN, NUMERIC, CHAR } = require('idb-pconnector')
 const schema = 'HRDATA'
 
 /* POST home page. */
 router.post('/', function(req, res, next) {
+  
   console.log('--> Into ajax_employee post')
 
   var isAjaxRequest = req.xhr
@@ -13,11 +13,12 @@ router.post('/', function(req, res, next) {
 
   // Check if this is an Ajax call
   if (isAjaxRequest) {
+    
     // get post vars
     let action = req.body.action
 
-    // delete functionality
-    if (action == 'delete') {
+    // Delete Functionality
+    if (action === 'delete') {
       let emid = req.body.emid
       console.log(`Deleting Employee ID: ${emid}`)
 
@@ -40,8 +41,8 @@ router.post('/', function(req, res, next) {
       })
     }
 
-    // update functionality
-    if (action == 'update') {
+    // Update Functionality
+    if (action === 'update') {
       let emid = req.body.emid
       let emfir = req.body.emfir
       let emsur = req.body.emsur
@@ -69,6 +70,39 @@ router.post('/', function(req, res, next) {
         res.send('error')
       })
     }
+
+    // Add Functionality
+    if (action === 'add') {
+
+      let emfir = req.body.emfir
+      let emsur = req.body.emsur
+      let emdep = req.body.emdep
+      let fullName = req.body.emfir.trim() + ' ' + req.body.emsur.trim()
+
+      async function execAdd() {
+
+        console.log(`Adding Employee: ${fullName} - Dep: ${emdep}`)
+
+        const connection = new Connection({ url: '*LOCAL' })
+        const statement = new Statement(connection)
+
+        let sql = `insert into ${schema}.employee (emsur, emfir, emdep) values(?,?,?)`
+
+        await statement.prepare(sql)
+
+        await statement.bindParam([[`${emsur}`, IN, CHAR], [`${emfir}`, IN, CHAR], [`${emdep}`, IN, CHAR]])
+
+        await statement.execute(sql)
+
+        res.send('ok')
+      }
+
+      execAdd().catch(error => {
+        console.error(`Unable to add employee - Error: ${error}`)
+        res.send('error')
+      })
+    }
+
   } else {
     // setup error messages & display error page
     console.error('Ajax Header called directly!')
