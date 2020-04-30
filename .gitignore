@@ -10,7 +10,7 @@ node_modules/
 config/
 
 # Images
-public/images/
+# public/images/
 
 # Uploads
 public/uploads/
