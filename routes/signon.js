@@ -1,10 +1,11 @@
-var express = require('express');
-var router = express.Router();
-const session = require('client-sessions');
+const express = require('express');
+const router = express.Router();
 const xt = require('itoolkit');
+const debug = require('debug')
 
 /* GET signon page. */
 router.get('/', function(req, res, next) {
+
   let title = 'PowerWire Intranet Signon';
   let accessFlag = false;  // Force signon inputs
 
@@ -13,19 +14,20 @@ router.get('/', function(req, res, next) {
     title,
     accessFlag
   });
+
 });
 
 /* POST signon page. */
 router.post('/', function(req, res, next) {
+  
   let title = 'Logged On Successfully!';
-  let errorFlag = false;
   let accessFlag = false;
 
   // get post vars
   let userID = req.body.userID;
   let password = req.body.password;
 
-  console.log(`Varyifying User: ${req.body.userID}`);
+  debug(`Varyifying User: ${req.body.userID}`);
 
   var conn = new xt.iConn('*LOCAL');
 
@@ -46,7 +48,8 @@ router.post('/', function(req, res, next) {
 
     conn.run(function(rsp) {
       let results = xt.xmlToJson(rsp);
-      // console.log(`Results: ${JSON.stringify(results, null, 4)}`);
+
+      debug(`Rsp Results: ${JSON.stringify(results, null, 2)}`);
 
       // results sent back as array, pickup first element
       let resultarray = results[0];

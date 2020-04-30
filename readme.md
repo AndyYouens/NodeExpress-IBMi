@@ -1,33 +1,41 @@
-## Project Title
+## A Nodejs Express Website
 
-A Nodejs Express Website Example on IBM i
+![FormaServe Logo](https://github.com/AndyYouens/f_Learning/blob/master/public/images/Logo.png)
+
+> This repo contains a NodeJS Express website that runs on IBM i.
+>
+> It shows full database maintenance features of a table/physical file on the IBM i
+
 
 ## Pre-reqs
 
-* Requires Node.js on IBM i at least version 8
+> Requires Node.js on IBM i at least version 8
 
 ## Authors
 
-* FormaServe Systems Ltd - *All work* - [FormaServe](https://www.formaserve.co.uk)
+> FormaServe Systems Ltd - *All work* - [FormaServe](https://www.formaserve.co.uk)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- **© 1990 - 2020 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
 
 ## Acknowledgments
 
-* Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
+> Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
 
 ## Latest Changes
 
-* Andy Youens - February 2020 - Include Delete record functionality
+> Andy Youens - April 2020 - Include Add record functionality
 
-## Published PowerWire
+## Published PowerWire Article
 
-*  March 2020
+>  May 2020
 
 ## Copyright
 
-* Andy Youens (c) 1990 - 2020 FormaServe Systems Ltd
+> Andy Youens © 1990 - 2020 FormaServe Systems Ltd
 
-### Open Source on IBM i - Oh Yea! ###
+## Open Source on IBM i - Oh Yea! ###
