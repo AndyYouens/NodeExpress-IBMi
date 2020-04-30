@@ -1,11 +1,10 @@
 ## A Nodejs Express Website
 
-![FormaServe Logo](https://github.com/AndyYouens/f_Learning/blob/master/public/images/Logo.png)
+![FormaServe Logo](https://github.com/AndyYouens/NodeExpress-IBMi/blob/master/public/images/Logo.png)
 
 > This repo contains a NodeJS Express website that runs on IBM i.
 >
 > It shows full database maintenance features of a table/physical file on the IBM i
-
 
 ## Pre-reqs
 
