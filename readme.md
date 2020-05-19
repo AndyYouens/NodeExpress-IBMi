@@ -1,4 +1,4 @@
-## A Nodejs Express Website
+## A Nodejs Express Website on IBM i
 
 ![FormaServe Logo](https://github.com/AndyYouens/NodeExpress-IBMi/blob/master/public/images/Logo.png)
 
@@ -10,31 +10,69 @@
 
 > Requires Node.js on IBM i at least version 8
 
-## Authors
+Install Instructions
+========================================
+
+
+Issue the following command to install clone the repo
+
+```
+git clone https://github.com/AndyYouens/NodeExpress-IBMi.git
+
+```
+
+CD into directory
+
+```
+cd \NodeExpress-IBMi
+```
+
+Install dependancies
+
+```
+npm install
+```
+Start application
+
+```
+npm start
+```
+
+Point your browser to https://your_IBMi:3333
+
+Authors
+========================================
 
 > FormaServe Systems Ltd - *All work* - [FormaServe](https://www.formaserve.co.uk)
 
-## License
+License
+========================================
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - **© 1990 - 2020 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
 
-## Acknowledgments
+Acknowledgments
+========================================
 
 > Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
 
-## Latest Changes
+Latest Changes
+========================================
 
 > Andy Youens - April 2020 - Include Add record functionality
 
-## Published PowerWire Article
+Published PowerWire Article
+========================================
 
 >  May 2020
 
-## Copyright
+Copyright
+========================================
 
-> Andy Youens © 1990 - 2020 FormaServe Systems Ltd
+> © 1990 - 2020 FormaServe Systems Ltd
 
-## Open Source on IBM i - Oh Yea! ###
+Open Source on IBM i - Oh Yea!
+========================================
+
