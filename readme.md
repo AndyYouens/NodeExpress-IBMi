@@ -6,13 +6,13 @@
 >
 > It shows full database maintenance features of a table/physical file on the IBM i
 
-## Pre-reqs
+# Pre-reqs
 
 > Requires Node.js on IBM i at least version 8
 
-Install Instructions
-========================================
+# Install Instructions
 
+These commands need to be run in a **QSHELL** session on your **IBM i**
 
 Issue the following command to install clone the repo
 
@@ -32,6 +32,7 @@ Install dependancies
 ```
 npm install
 ```
+
 Start application
 
 ```
@@ -40,39 +41,33 @@ npm start
 
 Point your browser to https://your_IBMi:3333
 
-Authors
-========================================
+# Authors
 
-> FormaServe Systems Ltd - *All work* - [FormaServe](https://www.formaserve.co.uk)
+> FormaServe Systems Ltd - _All work_ - [FormaServe](https://www.formaserve.co.uk)
 
-License
-========================================
+# License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - **© 1990 - 2020 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
 
-Acknowledgments
-========================================
+# Acknowledgments
 
 > Andy Youens - FormaServe Systems Ltd - Twitter [@AndyYouens](https://twitter.com/AndyYouens)
 
-Latest Changes
-========================================
+# Latest Changes
 
 > Andy Youens - April 2020 - Include Add record functionality
 
-Published PowerWire Article
-========================================
+# Published PowerWire Article
 
->  May 2020
+> May 2020
 
-Copyright
-========================================
+# Copyright
 
 > © 1990 - 2020 FormaServe Systems Ltd
 
-Open Source on IBM i - Oh Yea!
-========================================
+### Open Source on IBM i - Oh Yea!
 
+:wink:
