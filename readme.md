@@ -47,6 +47,18 @@ openssl req -new -key privatekey.pem -out certrequest.csr
 openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem -days 730
 ```
 
+Generate Tables\
+In the **public\sql** directory, run the employee.sql script in IBMs Access for Client Solutions (ACS)\
+This will create the table needed for this application.
+
+```bash
+#!/bin/bash
+cd certs
+openssl genrsa -out privatekey.pem 2048
+openssl req -new -key privatekey.pem -out certrequest.csr
+openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem -days 730
+```
+
 Start application
 
 ```bash
