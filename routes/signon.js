@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const xt = require('itoolkit');
-const debug = require('debug')
+const debug = require('debug')('powerweb:signon')
 
 /* GET signon page. */
 router.get('/', function(req, res, next) {
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 
 /* POST signon page. */
 router.post('/', function(req, res, next) {
-  
+
   let title = 'Logged On Successfully!';
   let accessFlag = false;
 

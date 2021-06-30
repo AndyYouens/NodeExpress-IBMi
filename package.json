@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon -L ./bin/www",
-    "debug": "DEBUG=formaserve* nodemon -L ./bin/www",
+    "debug": "DEBUG=powerweb* nodemon -L ./bin/www",
     "eslint": "eslint .",
     "security-check": "nsp check"
   },
@@ -18,19 +18,19 @@
     "delay": "2500",
     "env": {
       "NODE_ENV": "development",
-      "PORT": 4002
+      "PORT": 3333
     }
   },
   "dependencies": {
     "client-sessions": "^0.8.0",
     "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "debug": "~4.3.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "idb-pconnector": "^1.0.8",
     "itoolkit": "^0.1.6",
     "morgan": "~1.9.1",
-    "pug": "^2.0.4"
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
