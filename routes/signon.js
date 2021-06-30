@@ -6,7 +6,7 @@ const debug = require('debug')('powerweb:signon')
 /* GET signon page. */
 router.get('/', function(req, res, next) {
 
-  let title = 'PowerWire Intranet Signon';
+  let title = 'IBM i Intranet Signon';
   let accessFlag = false;  // Force signon inputs
 
   // Render Signon Screen
