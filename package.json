@@ -18,7 +18,7 @@
     "delay": "2500",
     "env": {
       "NODE_ENV": "development",
-      "PORT": 3333
+      "PORT": 4444
     }
   },
   "dependencies": {
@@ -27,8 +27,10 @@
     "debug": "~4.3.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "idb-connector": "^1.2.13",
     "idb-pconnector": "^1.0.8",
     "itoolkit": "^0.1.6",
+    "lodash": "^4.17.21",
     "morgan": "~1.9.1",
     "pug": "^3.0.2"
   },
@@ -43,7 +45,6 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "nsp": "^3.2.1",
     "prettier": "^2.0.4"
   }
 }
