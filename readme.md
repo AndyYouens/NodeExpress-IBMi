@@ -50,9 +50,12 @@ openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.p
 popd
 ```
 
-Generate Tables\
-In the **public\sql** directory, run the employee.sql script in IBMs Access for Client Solutions (ACS)\
-This will create the table needed for this application.
+Generate Schema and Tables\
+First, create an `HRTEST` schema
+```bash
+system "RUNSQL SQL('create schema HRDATA') COMMIT(*NONE)"
+```
+Now, create the tables and populate with sample data
 ```bash
 system "RUNSQLSTM SRCSTMF('public/sql/employee.sql')"
 ```
