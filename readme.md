@@ -12,12 +12,17 @@
 
 ## Install Instructions
 
-These commands need to be run in a **QSHELL** session on your **IBM i**
+These commands need to be run in a **QSHELL or (preferably) SSH** session on your **IBM i**.
+If using QSH, you must first set the `QIBM_MULTI_THREADED` environment variable to `Y` before
+starting your QSH session.
+```matlab
+ADDENVVAR ENVVAR(QIBM_MULTI_THREADED) VALUE(Y) REPLACE(*YES)
+```
+If you do not, commands may fail with `qsh: 001-0078 Process ended by signal 5.`.
 
 Issue the following command to install clone the repo
 
 ```bash
-#!/bin/bash
 git clone https://github.com/AndyYouens/NodeExpress-IBMi.git
 
 ```
@@ -25,14 +30,12 @@ git clone https://github.com/AndyYouens/NodeExpress-IBMi.git
 CD into directory
 
 ```bash
-#!/bin/bash
-cd \NodeExpress-IBMi
+cd NodeExpress-IBMi
 ```
 
 Install dependancies
 
 ```bash
-#!/bin/bash
 npm install
 ```
 
@@ -40,29 +43,23 @@ Generate SSL Certificates\
 Need to swap over to certs directory & generate SSL certs
 
 ```bash
-#!/bin/bash
-cd certs
+pushd certs
 openssl genrsa -out privatekey.pem 2048
 openssl req -new -key privatekey.pem -out certrequest.csr
 openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem -days 730
+popd
 ```
 
 Generate Tables\
 In the **public\sql** directory, run the employee.sql script in IBMs Access for Client Solutions (ACS)\
 This will create the table needed for this application.
-
 ```bash
-#!/bin/bash
-cd certs
-openssl genrsa -out privatekey.pem 2048
-openssl req -new -key privatekey.pem -out certrequest.csr
-openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem -days 730
+system "RUNSQLSTM SRCSTMF('public/sql/employee.sql')"
 ```
 
 Start application
 
 ```bash
-#!/bin/bash
 npm start
 ```
 
