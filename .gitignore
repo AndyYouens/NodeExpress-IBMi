@@ -19,6 +19,6 @@ public/uploads/
 package-lock.json
 
 # certificate info
-certs/
+certs/*
 *.csr
 *.pem
