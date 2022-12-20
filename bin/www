@@ -1,5 +1,5 @@
 /**
- *  PowerWire Article on Node.js on IBM i
+ *  A node.js website running on IBM i
  *
  *  Author: Andy Youens FormaServe Systems Ltd
  *  https://www.formaserve.co.uk
@@ -8,7 +8,6 @@
 
 const app = require('../app')
 const debug = require('debug')('powerweb:server')
-// const http = require('http')
 
 /**
  * Need the HTTPS & file system modules
@@ -37,7 +36,6 @@ const httpOptions = {
  * Create HTTP server - Now needs to be HTTPS
  */
 const server = https.createServer(httpOptions, app)
-// const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -45,7 +43,7 @@ const server = https.createServer(httpOptions, app)
 server.listen(port)
 
 // Send started message to logs
-console.log('*** Starting PowerWeb ***')
+console.log('*** Starting node.js on IBM i website ***')
 console.log(`Host: ${host}`)
 console.log(`Running on Port: ${port}`)
 

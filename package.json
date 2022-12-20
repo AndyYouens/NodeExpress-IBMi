@@ -25,7 +25,7 @@
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.4",
     "debug": "^4.3.0",
-    "express": "^4.16.1",
+    "express": "^4.18.2",
     "http-errors": "^2.0.0",
     "idb-connector": "^1.2.13",
     "idb-pconnector": "^1.0.8",
