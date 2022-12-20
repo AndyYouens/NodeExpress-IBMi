@@ -3,7 +3,8 @@
 <img src="/public/images/Logo.png" align="right">
 
 This repo contains a NodeJS Express website that runs on IBM i.
-It shows full database maintenance features of a table/physical file on the IBM i
+It shows full database maintenance features of a table/physical file on the IBM i.
+The application will show a signon screen that must be provided prior to the employee table maintenance features being enabled.
 
 ## Pre-reqs
 
@@ -25,7 +26,6 @@ Issue the following command to clone the repo
 
 ```bash
 git clone https://github.com/AndyYouens/NodeExpress-IBMi.git
-
 ```
 
 ### Move into the new directory
@@ -61,6 +61,13 @@ system "RUNSQLSTM SRCSTMF('public/sql/employee.sql')"
 
 ### Start application
 
+The application will run, by default, on port 3333.  If you want to use a different port, run the following command before the application is started.
+
+```bash
+export PORT=9090
+```
+then run
+
 ```bash
 npm start
 ```
@@ -73,7 +80,9 @@ npm run debug
 ### Point your browser to the application
 Point your browser to [https://your_ibmi:3333](https://your_ibmi:3333)
 
-and hopefully, you will see the application running on the IBM i & you can maintain the table within it.
+Ignore any browser security issues that appear.
+
+Then hopefully, you will see the application running on the IBM i & you can maintain the table within it.
 
 ## 🧑‍🏫 Still Training
 
