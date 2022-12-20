@@ -1,6 +1,6 @@
 # A Nodejs Express Website on IBM i
 
-<img src="/images/Logo.png" align="right">
+<img src="/public/images/Logo.png" align="right">
 
 This repo contains a NodeJS Express website that runs on IBM i.
 It shows full database maintenance features of a table/physical file on the IBM i
