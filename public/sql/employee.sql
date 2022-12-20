@@ -2,6 +2,9 @@
 -- specify the schema you will use for this example
 -- © FormaServe Systems Ltd
 --
+
+Create schema hrdata ;
+
 CREATE TABLE HRDATA.EMPLOYEE (
 	EMID INTEGER GENERATED ALWAYS AS IDENTITY (
 	START WITH 1 INCREMENT BY 1
